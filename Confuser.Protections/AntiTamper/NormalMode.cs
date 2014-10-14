@@ -162,7 +162,7 @@ namespace Confuser.Protections.AntiTamper {
 				if (!method.HasBody)
 					continue;
 				MethodBody body = writer.MetaData.GetMethodBody(method);
-				bool ok = writer.MethodBodies.Remove(body);
+				writer.MethodBodies.Remove(body);
 				encryptedChunk.Add(body);
 			}
 

@@ -79,7 +79,7 @@ namespace Confuser.DynCipher.Transforms {
 			for (int i = 0; i < ITERATION; i++) {
 				foreach (Statement st in context.Statements) {
 					int index = block.Statements.IndexOf(st);
-					Variable[] vars = GetVariableUsage(st).Concat(GetVariableDefinition(st)).ToArray();
+					
 
 					// Statement can move between defIndex & useIndex without side effects
 					int defIndex = SearchUpwardKill(context, st, block, index);
