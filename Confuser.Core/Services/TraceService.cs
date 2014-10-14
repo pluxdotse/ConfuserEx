@@ -188,13 +188,15 @@ namespace Confuser.Core.Services {
 				}
 			}
 
-			foreach (int stackDepth in beforeDepths)
-				if (stackDepth == int.MinValue)
-					throw new InvalidMethodException("Bad method body.");
+			if (beforeDepths.Any(stackDepth => stackDepth == int.MinValue))
+			{
+			    throw new InvalidMethodException("Bad method body.");
+			}
 
-			foreach (int stackDepth in afterDepths)
-				if (stackDepth == int.MinValue)
-					throw new InvalidMethodException("Bad method body.");
+			if (afterDepths.Any(stackDepth => stackDepth == int.MinValue))
+			{
+			    throw new InvalidMethodException("Bad method body.");
+			}
 
 			BeforeStackDepths = beforeDepths;
 			AfterStackDepths = afterDepths;

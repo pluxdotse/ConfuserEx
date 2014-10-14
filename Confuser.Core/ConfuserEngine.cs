@@ -63,13 +63,15 @@ namespace Confuser.Core {
 		/// <param name="token">The cancellation token.</param>
 		private static void RunInternal(ConfuserParameters parameters, CancellationToken token) {
 			// 1. Setup context
-			var context = new ConfuserContext();
-			context.Logger = parameters.GetLogger();
-			context.Project = parameters.Project;
-			context.PackerInitiated = parameters.PackerInitiated;
-			context.token = token;
+			var context = new ConfuserContext
+			{
+			    Logger = parameters.GetLogger(),
+			    Project = parameters.Project,
+			    PackerInitiated = parameters.PackerInitiated,
+			    token = token
+			};
 
-			PrintInfo(context);
+		    PrintInfo(context);
 
 			bool ok = false;
 			try {

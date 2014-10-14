@@ -142,9 +142,9 @@ namespace Confuser.Core {
 		/// <returns><c>true</c> if the specified type implements the interface; otherwise, <c>false</c>.</returns>
 		public static bool Implements(this TypeDef type, string fullName) {
 			do {
-				foreach (InterfaceImpl iface in type.Interfaces) {
-					if (iface.Interface.FullName == fullName)
-						return true;
+				if (type.Interfaces.Any(iface => iface.Interface.FullName == fullName))
+				{
+				    return true;
 				}
 
 				if (type.BaseType == null)

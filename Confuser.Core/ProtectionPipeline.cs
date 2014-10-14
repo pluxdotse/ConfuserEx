@@ -112,12 +112,7 @@ namespace Confuser.Core {
 					if (phase is T)
 						return (T)phase;
 				}
-			foreach (var phases in postStage.Values)
-				foreach (ProtectionPhase phase in phases) {
-					if (phase is T)
-						return (T)phase;
-				}
-			return null;
+		    return postStage.Values.SelectMany(phases => phases).OfType<T>().FirstOrDefault();
 		}
 
 		/// <summary>

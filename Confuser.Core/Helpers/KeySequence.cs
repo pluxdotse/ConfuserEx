@@ -158,14 +158,13 @@ namespace Confuser.Core.Helpers {
 						// Match the exit state with finally/fault/filter
 						List<ExceptionHandler> ehs;
 						if (!ehMap.TryGetValue(block, out ehs)) {
-							ehs = new List<ExceptionHandler>();
-							int footerIndex = graph.IndexOf(block.Footer);
-							foreach (var eh in graph.Body.ExceptionHandlers) {
-								if (footerIndex >= graph.IndexOf(eh.TryStart) &&
-								    footerIndex < graph.IndexOf(eh.TryEnd))
-									ehs.Add(eh);
-							}
-							ehMap[block] = ehs;
+						    int footerIndex = graph.IndexOf(block.Footer);
+						    ehs = graph.Body.ExceptionHandlers.Where(
+                                eh => footerIndex >= graph.IndexOf(eh.TryStart) && 
+                                      footerIndex < graph.IndexOf(eh.TryEnd)
+                            ).ToList();
+
+						    ehMap[block] = ehs;
 						}
 
 						uint? maxVal = null;
