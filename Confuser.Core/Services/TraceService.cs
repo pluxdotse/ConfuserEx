@@ -280,8 +280,7 @@ namespace Confuser.Core.Services {
 							evalStack.Pop();
 					}
 
-					object instrOperand = currentInstr.Operand;
-					if (currentInstr.Operand is Instruction) {
+				    if (currentInstr.Operand is Instruction) {
 						int targetIndex = offset2index[((Instruction)currentInstr.Operand).Offset];
 						if (currentInstr.OpCode.FlowControl == FlowControl.Branch)
 							index = targetIndex;
