@@ -1,3 +1,8 @@
+Notice!
+========
+This is my personal playground fork of ConfuserEx, this fork might at any time be horribly broken and incompatible with the [upstream](https://github.com/yck1509/ConfuserEx) version.
+Feel free to play around with it, but I won't give any promises that it will work, be secure or even be compatible with the current upstream.
+
 ConfuserEx
 ========
 ConfuserEx is a open-source protector for .NET applications.
