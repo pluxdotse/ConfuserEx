@@ -34,6 +34,7 @@ packages/
 *.sln.*
 gh-pages/
 ConfuserEx.snk
+dnlib.snk
 GlobalAssemblyInfo.cs
 /Build/*.zip
 !Build/7z.exe
