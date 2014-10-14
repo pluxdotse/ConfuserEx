@@ -89,38 +89,39 @@ namespace Confuser.Renamer.BAML {
 			BamlElement current = null;
 			var stack = new Stack<BamlElement>();
 
-			for (int i = 0; i < document.Count; i++) {
-				if (IsHeader(document[i])) {
-					BamlElement prev = current;
+			foreach (BamlRecord t in document)
+			{
+			    if (IsHeader(t)) {
+			        BamlElement prev = current;
 
-					current = new BamlElement();
-					current.Header = document[i];
-					current.Body = new List<BamlRecord>();
-					current.Children = new List<BamlElement>();
+			        current = new BamlElement();
+			        current.Header = t;
+			        current.Body = new List<BamlRecord>();
+			        current.Children = new List<BamlElement>();
 
-					if (prev != null) {
-						prev.Children.Add(current);
-						current.Parent = prev;
-						stack.Push(prev);
-					}
-				}
-				else if (IsFooter(document[i])) {
-					if (current == null)
-						throw new Exception("Unexpected footer.");
+			        if (prev != null) {
+			            prev.Children.Add(current);
+			            current.Parent = prev;
+			            stack.Push(prev);
+			        }
+			    }
+			    else if (IsFooter(t)) {
+			        if (current == null)
+			            throw new Exception("Unexpected footer.");
 
-					while (!IsMatch(current.Header, document[i])) {
-						// End record can be omited (sometimes).
-						if (stack.Count > 0)
-							current = stack.Pop();
-					}
-					current.Footer = document[i];
-					if (stack.Count > 0)
-						current = stack.Pop();
-				}
-				else
-					current.Body.Add(document[i]);
+			        while (!IsMatch(current.Header, t)) {
+			            // End record can be omited (sometimes).
+			            if (stack.Count > 0)
+			                current = stack.Pop();
+			        }
+			        current.Footer = t;
+			        if (stack.Count > 0)
+			            current = stack.Pop();
+			    }
+			    else
+			        current.Body.Add(t);
 			}
-			Debug.Assert(stack.Count == 0);
+		    Debug.Assert(stack.Count == 0);
 			return current;
 		}
 

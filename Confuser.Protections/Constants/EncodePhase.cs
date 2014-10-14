@@ -337,13 +337,10 @@ namespace Confuser.Protections.Constants {
 				return x.SequenceEqual(y);
 			}
 
-			public int GetHashCode(byte[] obj) {
-				int ret = 31;
-				foreach (byte v in obj)
-					ret = ret * 17 + v;
-				return ret;
+			public int GetHashCode(byte[] obj)
+			{
+			    return obj.Aggregate(31, (current, v) => current*17 + v);
 			}
-
 		}
 
 		[StructLayout(LayoutKind.Explicit)]

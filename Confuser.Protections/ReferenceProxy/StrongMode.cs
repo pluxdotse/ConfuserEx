@@ -171,9 +171,9 @@ namespace Confuser.Protections.ReferenceProxy {
 
 			method.Body = new CilBody();
 			method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldsfld, field));
-			for (int i = 0; i < method.Parameters.Count; i++)
-				method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldarg, method.Parameters[i]));
-			method.Body.Instructions.Add(Instruction.Create(OpCodes.Call, delegateType.FindMethod("Invoke")));
+			foreach (Parameter t in method.Parameters)
+			    method.Body.Instructions.Add(Instruction.Create(OpCodes.Ldarg, t));
+		    method.Body.Instructions.Add(Instruction.Create(OpCodes.Call, delegateType.FindMethod("Invoke")));
 			method.Body.Instructions.Add(Instruction.Create(OpCodes.Ret));
 
 			delegateType.Methods.Add(method);

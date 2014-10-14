@@ -42,9 +42,9 @@ namespace Confuser.Protections.ReferenceProxy {
 				ctx.Name.SetCanRename(proxy, false);
 
 				proxy.Body = new CilBody();
-				for (int i = 0; i < proxy.Parameters.Count; i++)
-					proxy.Body.Instructions.Add(Instruction.Create(OpCodes.Ldarg, proxy.Parameters[i]));
-				proxy.Body.Instructions.Add(Instruction.Create(invoke.OpCode, target));
+				foreach (Parameter t in proxy.Parameters)
+				    proxy.Body.Instructions.Add(Instruction.Create(OpCodes.Ldarg, t));
+			    proxy.Body.Instructions.Add(Instruction.Create(invoke.OpCode, target));
 				proxy.Body.Instructions.Add(Instruction.Create(OpCodes.Ret));
 
 				proxies[key] = proxy;
