@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Confuser.Renamer {
+﻿namespace Confuser.Renamer {
 	public enum RenameMode {
 
 		Empty,

@@ -1,6 +1,5 @@
 // OutBuffer.cs
 
-using System;
 using System.IO;
 
 namespace SevenZip.Buffer {

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConfuserEx.ViewModel {
+﻿namespace ConfuserEx.ViewModel {
 	public abstract class TabViewModel : ViewModelBase {
 
 		protected TabViewModel(AppVM app, string header) {

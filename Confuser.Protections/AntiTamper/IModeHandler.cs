@@ -1,5 +1,4 @@
-﻿using System;
-using Confuser.Core;
+﻿using Confuser.Core;
 
 namespace Confuser.Protections.AntiTamper {
 	internal interface IModeHandler {

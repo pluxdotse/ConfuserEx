@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConfuserEx.ViewModel {
+﻿namespace ConfuserEx.ViewModel {
 	public class StringItem : IViewModel<string> {
 
 		public StringItem(string item) {

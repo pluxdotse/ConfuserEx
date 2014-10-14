@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Confuser.Core;
 using dnlib.DotNet;
 using dnlib.DotNet.Emit;

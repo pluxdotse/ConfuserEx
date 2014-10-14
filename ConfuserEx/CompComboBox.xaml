@@ -1,8 +1,7 @@
 ﻿<UserControl x:Class="ConfuserEx.CompComboBox"
              x:Name="Root"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:core="clr-namespace:Confuser.Core;assembly=Confuser.Core">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ComboBox ItemsSource="{Binding Components, ElementName=Root}"
               SelectedItem="{Binding SelectedComponent, ElementName=Root}"
               DisplayMemberPath="Id" FontFamily="Consolas"

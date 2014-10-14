@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Confuser.Core.Project {
+﻿namespace Confuser.Core.Project {
 	/// <summary>
 	///     The type of pattern tokens
 	/// </summary>

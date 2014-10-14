@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Confuser.DynCipher.AST {
+﻿namespace Confuser.DynCipher.AST {
 	public class ArrayIndexExpression : Expression {
 
 		public Expression Array { get; set; }

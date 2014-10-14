@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Confuser.Protections.Resources {
+﻿namespace Confuser.Protections.Resources {
 	internal enum Mode {
 
 		Normal,

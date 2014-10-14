@@ -1,5 +1,4 @@
-﻿using System;
-using Confuser.Core.Project;
+﻿using Confuser.Core.Project;
 
 namespace ConfuserEx.ViewModel {
 	public class ProjectSettingVM<T> : ViewModelBase, IViewModel<SettingItem<T>> {

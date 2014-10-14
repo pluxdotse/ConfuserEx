@@ -1,5 +1,4 @@
-﻿using System;
-using Confuser.DynCipher.AST;
+﻿using Confuser.DynCipher.AST;
 
 namespace Confuser.DynCipher.Transforms {
 	internal class NormalizeBinOpTransform {

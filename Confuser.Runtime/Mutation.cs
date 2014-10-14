@@ -1,6 +1,4 @@
-﻿using System;
-
-internal class Mutation {
+﻿internal class Mutation {
 
 	public static readonly int KeyI0 = 0;
 	public static readonly int KeyI1 = 1;

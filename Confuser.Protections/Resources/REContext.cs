@@ -1,5 +1,4 @@
-﻿using System;
-using Confuser.Core;
+﻿using Confuser.Core;
 using Confuser.Core.Services;
 using Confuser.DynCipher;
 using Confuser.Renamer;

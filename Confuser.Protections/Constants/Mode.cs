@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Confuser.Protections.Constants {
+﻿namespace Confuser.Protections.Constants {
 	internal enum Mode {
 
 		Normal,

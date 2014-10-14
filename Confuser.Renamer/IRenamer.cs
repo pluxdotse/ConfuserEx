@@ -1,5 +1,4 @@
-﻿using System;
-using Confuser.Core;
+﻿using Confuser.Core;
 using dnlib.DotNet;
 
 namespace Confuser.Renamer {
